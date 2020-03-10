@@ -1,10 +1,10 @@
 croa=["c=","c-","dz=","d-","lj","nj","s=","z="]
-alpha=list("abcdefghijklmnopqrstuvwxyz")
-croabet=croa+alpha
+alpha=list("abcdefghijklmnopqrstuvwxyz=-")
 count=[]
+c=[]
 N=str(input())
-word=list(N)
-for i in range(len(word)) : 
-    
-
-print(sum(count))
+for i in range(len(alpha)) : 
+    count.append(N.count(alpha[i]))
+for j in range(len(croa)) :
+    c.append(N.count(croa[j]))
+print(sum(count)-sum(c))

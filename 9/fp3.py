@@ -1,5 +1,3 @@
-
-
 def sosu(N) :
     if N==1 : return False
     n=int(N**0.5)

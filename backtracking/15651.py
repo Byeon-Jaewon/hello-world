@@ -9,9 +9,7 @@ def solve(ind):
         return
     
     for i in range(1, N+1):
-        if check[i-1]==True :
-            check[i-1]==False
-            
+           
         check[i-1]=True
         lst.append(i)
         solve(ind+1)

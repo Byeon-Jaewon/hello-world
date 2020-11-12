@@ -19,12 +19,10 @@ def solve(ind):
         if check[i-1]==True :
             continue
         
-        check[i-1]=True
         lst.append(i)
         solve(ind+1)
+        check[i-1]=True
         lst.pop()
         init(check,i)
-    
-
     
 solve(0)

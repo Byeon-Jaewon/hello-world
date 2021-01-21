@@ -8,7 +8,7 @@ tmp = []
 for i in range(N) :
     tmp.append(int(sys.stdin.readline()))
 tmp = sorted(tmp)
-print(sum(tmp) / N)
+print(round(sum(tmp) / N))
 print(tmp[N//2])
 c = Counter(tmp).most_common()
 if len(c) > 1:

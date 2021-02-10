@@ -1,13 +1,16 @@
-N, M = map(int, input().split())
+import sys
+N, M = map(int, sys.stdin.readline().split())
 lst = []
+dic = {}
 ques = []
-for i in range(N):
-    lst.append(input())
-for i in range(M):
-    ques.append(input())
-
-for i in ques:
-    if i in lst:
-        print(lst.index(i) + 1)
-    else :
-        print(lst[int(i)])
+for i in range(1, N+1):
+    a = sys.stdin.readline().rstrip()
+    lst.append(a)
+    dic[a] = i
+for _ in range(M):
+    ques.append(sys.stdin.readline().rstrip())
+for j in ques:
+    if j.isalpha():
+        print(dic[j])
+    elif j.isdigit() :
+        print(lst[int(j)-1])

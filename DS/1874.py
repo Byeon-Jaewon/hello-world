@@ -19,4 +19,4 @@ if flag == 0 :
     for i in result:
         print(i)
 else :
-    print("NO")
+    print("NO") 

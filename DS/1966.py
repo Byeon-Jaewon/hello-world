@@ -17,4 +17,4 @@ for _ in range(T):
                 idx.pop(0)
         else :
             queue.append(queue.pop(0))
-            idx.append(idx.pop(0)) 
+            idx.append(idx.pop(0))  

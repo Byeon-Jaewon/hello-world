@@ -1,24 +1,28 @@
 result = []
 while True:
-    STR = input()
-    if STR == '.':
+    s = input()
+    stack = []
+    flag = True
+    if s == '.':
         break
-    sflag = 0
-    lflag = 0
-    for i in STR:
-        if i == '(' :
-            sflag += 1
+    for i in s:
+        if i in '([':
+            stack.append(i)
         elif i == ')' :
-            sflag -= 1
-        if i == '[' :
-            lflag +=1 
-        elif i == ']' :
-            lflag -= 1
-        if (sflag < 0 or lflag < 0):
-            break
-    if (sflag == 0 and lflag == 0):
-        result.append("yes")
-    else :
-        result.append("no")
+            if not stack or stack[-1]=='[':
+                flag = False
+                result.append('no')
+                break
+            elif stack[-1] == '(':
+                stack.pop()
+        elif i == ']':
+            if not stack or stack[-1] == '(':
+                flag = False
+                result.append('no')
+                break
+            elif stack[-1] == '[':
+                stack.pop()
+    if flag == True and not stack :
+        result.append('yes')
 for i in result:
     print(i)

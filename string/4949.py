@@ -11,18 +11,18 @@ while True:
         elif i == ')' :
             if not stack or stack[-1]=='[':
                 flag = False
-                result.append('no')
                 break
             elif stack[-1] == '(':
                 stack.pop()
         elif i == ']':
             if not stack or stack[-1] == '(':
                 flag = False
-                result.append('no')
                 break
             elif stack[-1] == '[':
                 stack.pop()
     if flag == True and not stack :
         result.append('yes')
+    else :
+        result.append('no')
 for i in result:
     print(i)
